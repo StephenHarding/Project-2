@@ -1,0 +1,71 @@
+header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: yellow;
+  height: 10vh;
+}
+.ultop {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px
+}
+.nav {
+  margin: 10px;
+}
+
+li {
+  color: blue;
+}
+.logo {
+  width:100px;
+  justify-content: flex-start;
+}
+
+.bigContainer {
+  display: flex;
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
+.tableContainer {
+    background-color:purple;
+  width:90%;
+  display:flex;
+  flex-direction: column;
+
+}
+.container {
+  background-color:grey;
+  width: 100%;
+  min-height:50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.table {
+  background-color:red;
+  width:100%;
+  display:flex;
+  min-height:30%;
+}
+.day {
+  background-color:blue;
+  border-style: solid;
+  border-width: 1px;
+  width: 14%;
+  height:100%;
+}
+.moneyDiv {
+  line-height: 0%;
+  border-style: solid;
+  border-width: 1px;
+}
+.weeklyTotalDiv {
+  background-color:blue;
+  border-style: solid;
+  border-width: 1px;
+  width: 14%;
+  height:100%;
+
+}
