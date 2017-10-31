@@ -1,0 +1,1 @@
+My project is to make a subway price calculator that can use different subway systems so far I've got the basics of what it will look like in index.html in the test folder, it requires main.js to work. However I'm having difficulty with the css.
