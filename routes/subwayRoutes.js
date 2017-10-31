@@ -1,9 +1,15 @@
 const express = require('express')
 
 const subwayRoutes = express.Router()
-const subwayController = ('../controllers/subway-controller')
-
+const subwayController = require('../controllers/subway-controller')
+console.log(subwayController)
+subwayRoutes.get('/:name/edit', subwayController.edit)
 subwayRoutes.get('/', subwayController.index)
-subwayRoutes.get('/:id', subwayController.show)
+subwayRoutes.post('/', subwayController.create)
+subwayRoutes.get('/add', (req, res)=> {
+  res.render('subway/subway-add.ejs')
+})
+subwayRoutes.get('/:name', subwayController.show)
+
 
 module.exports = subwayRoutes

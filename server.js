@@ -31,14 +31,14 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', (req, res)=>{
+/*app.get('/', (req, res)=>{
   res.render('auth/login')
-})
+})*/
 
-const authRoutes = require('./routes/auth-routes');
-app.use('/auth', authRoutes);
-const userRoutes = require('./routes/user-routes');
-app.use('/user', userRoutes);
+/*const authRoutes = require('./routes/auth-routes');
+app.use('/auth', authRoutes);*/
+/*const userRoutes = require('./routes/user-routes');
+app.use('/user', userRoutes);*/
 const subwayRoutes = require('./routes/subwayRoutes')
 app.use('/subway', subwayRoutes)
 

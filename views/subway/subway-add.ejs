@@ -1,0 +1,31 @@
+  <% include ../partials/top.ejs %>
+  <div class="bigContainer">
+    <div class="container">
+      <div class ="addContainer">
+        <form action="/subway" method="POST">
+            <label>Name of Subway Price System</label>
+            <input type="text" name="name" placeholder="name"><br>
+            <label>One Ride</label>
+            <input type="number" name="oneRide" placeholder="Price of One Ride"><br>
+            <label>Express/special</label>
+            <input type="number" name="express" placeholder="Add-on price of an express or special route"><br>
+            <label>Transfer</label>
+            <input type="number" name="oneRideTransfer" placeholder="Add-on price of doing a transfer"><br>
+            <label>One Day Pass</label>
+            <input type="number" name="oneDayPass" placeholder="Price of a One Day Pass"><br>
+            <label>Three Day Pass</label>
+            <input type="number" name="threeDayPass" placeholder="Price of a Three Day Pass"><br>
+            <br>
+            <label>Seven Day Pass</label>
+            <input type="number" name="sevenDayPass" placeholder="Price of a Seven Day   Pass"><br>
+            <label>thirty Day Pass</label>
+            <input type="number" name="thirtyDayPass" placeholder="Price of a thirty Day Pass"><br>
+            <label>Notes</label>
+            <input name="notes" placeholder="Anything else the user needs to know"><br>
+            <input type="submit">
+  </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

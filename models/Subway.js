@@ -6,12 +6,27 @@ Subway.ShowAll = () => {
 }
 
 Subway.findById = id => {
-  return db.one('SELECT * FROM subway WHERE id = $1', [id])
+  return db.one('SELECT * FROM subway WHERE name = $1', [id])
 }
 
-Subway.create = subwayObj => {
+ Subway.create = subwayObj => {
   return db.one(`
-    INSERT INTO subway(oneRide, DowntownExpress, card, oneRideTrensfer, OneDayPass, threeDayPass, sevenDayPass,
-    thirtyDayPass, notes) VALUES($/oneRide/, $/DowntownExpress/, $/card/, $/oneRideTrensfer/, $/OneDayPass/, $/threeDayPass/, $/sevenDayPass/,
+    INSERT INTO subway(name, oneride, express, card, oneridetrensfer, oneDayPass, threedaypass, sevendaypass,
+    thirtydaypass, notes) VALUES($/name/, $/oneRide/, $/express/, $/card/, $/oneRideTrensfer/, $/OneDayPass/, $/threeDayPass/, $/sevenDayPass/,
     $/thirtyDayPass/, $/notes/) RETURNUNG *`, subwayObj)
 }
+
+Subway.update = (subwayObj, id) => {
+  return db.one(`UPDATE subway SET
+    oneride =$/oneRide/,
+    express= $/express/,
+    card = $/card/,
+    oneridetransfer= $/oneRideTransfer/,
+    onedaypass=$/oneDayPass/,
+    threedaypass=$/threeDayPass/,
+    sevendaypass=$/sevenDayPass/,
+    thirtydaypass=$/thirtyDayPass/,
+    notes=$/notes/, WHERE name=$2`, [subwayObj, id])
+}
+
+module.exports = Subway

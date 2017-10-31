@@ -1,0 +1,31 @@
+  <% include ../partials/top.ejs %>
+  <div class="bigContainer">
+    <div class="container">
+      <div class ="addContainer">
+        <form action="/subway?/<%=data.name%>?_method=PUT" method="POST">
+            <label>Name of Subway Price System</label>
+            <input type="text" name="name" value="<%=data.name %>" placeholder="<%=data.name %>"><br>
+            <label>One Ride</label>
+            <input type="number" name="oneRide" value="<%=data.oneride %>" placeholder="<%=data.oneRide %>"><br>
+            <label>Express/special</label>
+            <input type="number" name="express" value="<%=data.express %>" placeholder="<%=data.express %>"><br>
+            <label>Transfer</label>
+            <input type="number" name="ridetransfer" value="<%=data.ridetransfer %>" placeholder="<%=data.riderransfer %>"><br>
+            <label>One Day Pass</label>
+            <input type="number" name="oneDayPass" value="<%=data.onedaypass %>" placeholder="<%=data.oneDayPass %>"><br>
+            <label>Three Day Pass</label>
+            <input type="number" name="threeDayPass" value="<%=data.threedaypass %>" placeholder="<%=data.threeDayPass %>"><br>
+            <br>
+            <label>Seven Day Pass</label>
+            <input type="number" name="sevenDayPass" value="<%=data.sevendaypass %>" placeholder="<%=data.sevenDayPass %>"><br>
+            <label>thirty Day Pass</label>
+            <input type="number" name="thirtyDayPass" value="<%=data.thirtydaypass %>" placeholder="<%=data.thirtyDayPass %>"><br>
+            <label>Notes</label>
+            <input name="notes" placeholder="Anything else the user needs to know"><br>
+            <input type="submit">
+           </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
