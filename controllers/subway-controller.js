@@ -29,7 +29,7 @@ subwayController.create = (req, res) => {
     oneRide: req.body.oneRide,
     express: req.body.express,
     card: req.body.card,
-    oneRideTransfer: req.body.oneRideTransfer,
+    RideTransfer: req.body.RideTransfer,
     oneDayPass: req.body.oneDayPass,
     threeDayPass: req.body.threeDayPass,
     sevenDayPass: req.body.sevenDayPass,

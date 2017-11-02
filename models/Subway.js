@@ -11,8 +11,8 @@ Subway.findById = id => {
 
  Subway.create = subwayObj => {
   return db.one(`
-    INSERT INTO subway(name, oneride, express, card, oneridetrensfer, oneDayPass, threedaypass, sevendaypass,
-    thirtydaypass, notes) VALUES($/name/, $/oneRide/, $/express/, $/card/, $/oneRideTrensfer/, $/OneDayPass/, $/threeDayPass/, $/sevenDayPass/,
+    INSERT INTO subway(name, oneride, express, card, ridetransfer, oneDayPass, threedaypass, sevendaypass,
+    thirtydaypass, notes) VALUES($/name/, $/oneRide/, $/express/, $/card/, $/RideTransfer/, $/OneDayPass/, $/threeDayPass/, $/sevenDayPass/,
     $/thirtyDayPass/, $/notes/) RETURNUNG *`, subwayObj)
 }
 
@@ -21,7 +21,7 @@ Subway.update = (subwayObj, id) => {
     oneride =$/oneRide/,
     express= $/express/,
     card = $/card/,
-    oneridetransfer= $/oneRideTransfer/,
+    ridetransfer= $/RideTransfer/,
     onedaypass=$/oneDayPass/,
     threedaypass=$/threeDayPass/,
     sevendaypass=$/sevenDayPass/,
