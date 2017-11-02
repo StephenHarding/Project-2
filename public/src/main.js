@@ -8,14 +8,14 @@ for(i = 0; i < 30; i++) {
   dayArray.push(0)
 }
 console.log(dayArray)
-var transfer = (parseInt($('.transfer').html())).toFixed(2)
-var oneRideN= (parseInt($('.oneRide').html()))
+var transfer = (parseFloat($('.transfer').html())).toFixed(2)
+var oneRideN= (parseFloat($('.oneRide').html()))
 var oneRide = oneRideN.toFixed(2)
-var express= (parseInt($('.downtownExpress').html())).toFixed(2)
-var oneDayPass= (parseInt($('.oneDayPass').html())).toFixed(2)
-var threeDayPass= (parseInt($('.threeDayPass').html())).toFixed(2)
-var sevenDayPass= (parseInt($('.sevenDaypass').html())).toFixed(2)
-var thirtyDayPass= (parseInt($('.thirtyDayPass').html())).toFixed(2)
+var express= (parseFloat($('.downtownExpress').html())).toFixed(2)
+var oneDayPass= (parseFloat($('.oneDayPass').html())).toFixed(2)
+var threeDayPass= (parseFloat($('.threeDayPass').html())).toFixed(2)
+var sevenDayPass= (parseFloat($('.sevenDaypass').html())).toFixed(2)
+var thirtyDayPass= (parseFloat($('.thirtyDayPass').html())).toFixed(2)
 
 const nameDays = function() {
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -83,6 +83,12 @@ $('select').on('change', function () {
       console.log('active')
       let div = $(this).parent()
       div.addClass('oneDay')
+      if ($(this).parent().hasClass('threeDay')) {
+        $(this).parent().removeClass('threeDay')
+      }
+      if ($(this).parent().hasClass('sevenDay')) {
+        $(this).parent().removeClass('sevenDay')
+      }
       dayPasses()
       div.append(`<div class="moneyDiv"><p class ="money decimal">${oneDayPass}</p>`)
 
@@ -90,6 +96,12 @@ $('select').on('change', function () {
     else if ($val === 13){
       let div = $(this).parent()
       div.addClass('threeDay')
+      if ($(this).parent().hasClass('sevenDay')) {
+        $(this).parent().removeClass('sevenDay')
+      }
+        if ($(this).parent().hasClass('oneDay')) {
+        $(this).parent().removeClass('oneDay')
+      }
       dayPasses()
     div.append(`<div class="moneyDiv"><p class ="money decimal">${threeDayPass}</p></div>`)
 
@@ -97,9 +109,16 @@ $('select').on('change', function () {
     else if ($val === 14){
       let div = $(this).parent()
       div.addClass('sevenDay')
+        if ($(this).parent().hasClass('oneDay')) {
+        $(this).parent().removeClass('oneDay')
+      }
+        if ($(this).parent().hasClass('threeDay')) {
+        $(this).parent().removeClass('threeDay')
+      }
       dayPasses()
       div.append(`<div class="moneyDiv"><p class ="money decimal">${sevenDayPass}</p></div>`)
     }
+
     else {
       let div = $(this).parent()
       if ($(this).parent().hasClass('threeDay')) {
@@ -107,6 +126,9 @@ $('select').on('change', function () {
       }
       if ($(this).parent().hasClass('sevenDay')) {
         $(this).parent().removeClass('sevenDay')
+      }
+        if ($(this).parent().hasClass('oneDay')) {
+        $(this).parent().removeClass('oneDay')
       }
       for (k = 0; k < $val; k++){
 
