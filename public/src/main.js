@@ -132,21 +132,29 @@ $('select').on('change', function () {
       }
       for (k = 0; k < $val; k++){
 
-        $(this).parent().append(`<div class="moneyDiv"><p class ="money decimal">${oneRide}</p><input class="transferB" type="checkbox" name="transferB" value="0.25">trans<input type="checkbox" class="express" name="express" value="3.00">exp</div>`)
+        $(this).parent().append(`<div class="moneyDiv"><p class ="money decimal">${oneRide}</p><input class="transferB" type="checkbox" name="transferB" value="0.25">trans<input type="checkbox" class="expressB" name="expressB" value="3.00">exp</div>`)
+
+          boxes1()
+          boxes2()
      }
       }
       dayPasses()
+
   var column = $(this).parent()
+  console.log(column)
   var dayTotal1 = columnTotal(column)
   weeklyTotal(column)
   monthlyTotal()
   column.append(`<div class="columnTotalDiv"><p>Total:</p><p class ="columnTotal">${dayTotal1}</p></div>`)
 })
 const columnTotal = function(column) {
+  console.log("reached")
   var dayTotal2 = 0
+  console.log(column)
   var money = column.find('.moneyDiv')
   money.each(function(index){
     dayTotal2 += parseFloat($(this).find('.money').html())
+    console.log("this is" + dayTotal2)
   })
   var dayTotal3 = dayTotal2.toFixed(2)
   return dayTotal3
@@ -206,22 +214,96 @@ $('.money').each(function(){
 $('.monthlyTotal').html(monthly2)
 }
 /* got checkbox method from https://stackoverflow.com/questions/7031226/jquery-checkbox-change-and-click-event */
+const boxes1 = function() {
+  $('.transferB').off('change')
 $('.transferB').change(function () {
   console.log('checked')
   if(this.checked) {
     console.log('checked is working')
+    var tl = 0
     var currentV = 0
     var moneyP = $(this).parent().find('.money')
     currentV = (parseFloat(moneyP.html())).toFixed(2)
-    currentV += transfer
+    currentV = parseFloat(currentV)
+    console.log("checked on " + typeof currentV)
+    tl = parseFloat(transfer)
+    console.log(typeof tl)
+    currentV += tl
+    currentV = currentV.toFixed(2)
     moneyP.html(currentV)
+    var columna = $(this).parent().parent()
+    console.log(columna)
+      var dayTotal1 = columnTotal(columna)
+      console.log("dayTotal1 = " + dayTotal1)
+  weeklyTotal(columna)
+  monthlyTotal()
+    columna.find('.columnTotalDiv').remove()
+  columna.append(`<div class="columnTotalDiv"><p>Total:</p><p class ="columnTotal">${dayTotal1}</p></div>`)
+
   }
   else {
     var currentV = 0
+    var tl = 0
     var moneyP = $(this).parent().find('.money')
     currentV = (parseFloat(moneyP.html())).toFixed(2)
-    currentV -= transfer
+    currentV = parseFloat(currentV)
+    tl = parseFloat(transfer)
+    currentV -= tl
+    currentV = currentV.toFixed(2)
     moneyP.html(currentV)
+    var columna = $(this).parent().parent()
+    var dayTotal1 = columnTotal(columna)
+  weeklyTotal(columna)
+  monthlyTotal()
+    columna.find('.columnTotalDiv').remove()
+  columna.append(`<div class="columnTotalDiv"><p>Total:</p><p class ="columnTotal">${dayTotal1}</p></div>`)
   }
 })
+}
+const boxes2 = function() {
+  $('.expressB').off('change')
+$('.expressB').change(function () {
+  console.log('checked')
+  if(this.checked) {
+    console.log('checked is working')
+    var el = 0
+    var currentV = 0
+    var moneyP = $(this).parent().find('.money')
+    currentV = (parseFloat(moneyP.html())).toFixed(2)
+    currentV = parseFloat(currentV)
+    console.log("checked on " + typeof currentV)
+    el = parseFloat(express)
+    console.log(typeof el)
+    currentV += el
+    currentV = currentV.toFixed(2)
+    moneyP.html(currentV)
+    var columna = $(this).parent().parent()
+    console.log(columna)
+      var dayTotal1 = columnTotal(columna)
+      console.log("dayTotal1 = " + dayTotal1)
+  weeklyTotal(columna)
+  monthlyTotal()
+    columna.find('.columnTotalDiv').remove()
+  columna.append(`<div class="columnTotalDiv"><p>Total:</p><p class ="columnTotal">${dayTotal1}</p></div>`)
+
+  }
+  else {
+    var currentV = 0
+    var el = 0
+    var moneyP = $(this).parent().find('.money')
+    currentV = (parseFloat(moneyP.html())).toFixed(2)
+    currentV = parseFloat(currentV)
+    el = parseFloat(express)
+    currentV -= el
+    currentV = currentV.toFixed(2)
+    moneyP.html(currentV)
+    var columna = $(this).parent().parent()
+    var dayTotal1 = columnTotal(columna)
+  weeklyTotal(columna)
+  monthlyTotal()
+    columna.find('.columnTotalDiv').remove()
+  columna.append(`<div class="columnTotalDiv"><p>Total:</p><p class ="columnTotal">${dayTotal1}</p></div>`)
+  }
+})
+}
 /*`<form><select class="ridesForDay" id="ride${index}" name="rideSelector" size="12"><option value="0">0</option></select></form>`)*/
