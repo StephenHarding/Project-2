@@ -62,13 +62,13 @@ for (w = 0; w < 12; w++) {
     $('.ridesForDayB').append(`<option value="${w}">${w}</option>`)
   }
   if(oneDayPass != 0){
-    $('.ridesForDayB').append(`<option value="12">One Day Pass</option>`)
+    $('.ridesForDayB').append(`<option value="12">1 Day</option>`)
   }
   if(threeDayPass != 0){
-    $('.ridesForDayB').append(`<option value="13">Three Day Pass</option>`)
+    $('.ridesForDayB').append(`<option value="13">3 Day</option>`)
   }
   if(sevenDayPass != 0){
-    $('.ridesForDayB').append(`<option value="14">Seven Day Pass</option>`)
+    $('.ridesForDayB').append(`<option value="14">7 Day</option>`)
   }
 }
 

@@ -1,6 +1,6 @@
   <% include ../partials/top.ejs %>
 <% data.forEach(sub => { %>
-	<p><%= sub.name %></p>
+	<a href="/subway/<%= sub.name %>"><p><%= sub.name %></p></a>
 <% }) %>
     <script src='/src/jquery.js'></script>
   <script src='/src/main.js'></script>
