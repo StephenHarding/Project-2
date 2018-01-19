@@ -1,9 +1,82 @@
+p {
+  font-family: 'Slabo 27px', serif;
+  letter-spacing: 3px;
+  font-size: 24px;
+}
+.title {
+  font-family: 'Slabo 27px', serif;
+}
+body {
+  background-image: url("../subway2.jpg");
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-color: #bababa
+}
+.ridesForDayB {
+  margin: 0px 6px 0px 6px;
+}
+.daylabel {
+  background-color:#87c67b;
+  padding: 0px 12px 0px 12px;
+  font-family: 'Slabo 27px', serif;
+}
+.G {
+  padding: 0px 12px 0px 12px;
+  font-family: 'Slabo 27px', serif;
+
+}
+.edita {
+  position: relative;
+  padding: 12px 12px 12px 12px;
+  left: 90vh;
+  display: flex;
+  justify-content: flex-end;
+
+}
+.a2 {
+  padding: 12px 12px 12px 12px;
+  
+}
+.addContainer {
+  background-color: #87c67b;
+  position:relative;
+  top: 100px;
+  width:350px;
+  padding: 24px 24px 24px 24px;
+}
+.subListc {
+  display: flex;
+  justify-content: center;
+  position:relative; 
+  top: 20vh;
+}
+.subList {
+  text-align: center
+}
+.subLink {
+  text-decoration: none;
+  color: blue;
+  font-family: 'Slabo 27px', serif;
+  background-color: #87c67b;
+  font-size: 24px;
+}
+.L {
+  padding: 12px 12px 12px 12px;
+  letter-spacing: 3px;
+}
 header {
+  position: relative;
+  width: 102%;
+  left: -9px;
   display:flex;
   justify-content: space-between;
   align-items: center;
   background-color: yellow;
-  height: 10vh;
+  height:   60px;
+}
+.a1 {
+  color: blue;
+  text-decoration: none
 }
 .ultop {
   display: flex;
@@ -16,18 +89,28 @@ header {
 
 li {
   color: blue;
+  padding: 0px 12px 0px 0px;
 }
 .logo {
   width:100px;
   justify-content: flex-start;
+}
+.logo2 {
+  height: 64px;
 }
 
 .bigContainer {
   display: flex;
   min-height: 90vh;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center
+}
+.loginC {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
 .tableContainer {
     background-color:purple;
@@ -36,18 +119,24 @@ li {
   flex-direction: column;
 
 }
+.flexform {
+  display: flex;
+  justify-content: space-between;
+}
 .container {
-  background-color: black;
   width: 100%;
   min-height:50%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .table {
-  background-color:red;
+  background-color:#87c67b;
   width:100%;
   display:flex;
   min-height:30%;
+}
+.money {
+  margin: 12px 12px 12px 12px;
 }
 .day {
   background-color:blue;
@@ -79,18 +168,18 @@ li {
 
 }
 .oneDayS {
-  background-color:red;
+  background-color:#a93a2b;
 }
 .threeDayS {
-  background-color:red;
+  background-color:#a93a2b;
 }
 
 .sevenDayS {
-  background-color: purple;
+  background-color: #972caa;
 }
 
 .monthlyTotalDiv {
-  background-color:red;
+  background-color:#5576aa;
   border-style: solid;
   border-width: 1px;
   width: 14%;

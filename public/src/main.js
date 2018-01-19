@@ -46,11 +46,11 @@ if (dayCount > 7){
     }
    }
    for(m = 0; m < 2; m++) {
-     $(`.table${m}`).append(`<div class="weeklyTotalDiv" id="weeklyTotal${m}"><p>Weekly Total:</p><p class="weeklyTotal"></p></div>`)
-  $(`.table${m}`).append(`<div class="costOfWeeklyDiv" id="costOfWeekly${m}"><p>Cost of Weekly Pass:</p><p class="costOfWeekly">${sevenDayPass}</p></div>`)
+     $(`.table${m}`).append(`<div class="weeklyTotalDiv" id="weeklyTotal${m}"><p class="G">Weekly Total:</p><p class="weeklyTotal G"></p></div>`)
+  $(`.table${m}`).append(`<div class="costOfWeeklyDiv" id="costOfWeekly${m}"><p class="G">Cost of Weekly Pass:</p><p class="costOfWeekly G">${sevenDayPass}</p></div>`)
 }
-$(`.table${m}`).append(`<div class="monthlyTotalDiv" id="monthlyTotal"><p>Montly Total:</p><p class="monthlyTotal"></p></div>`)
-$(`.table${m}`).append(`<div class="costOfMonthlyDiv" id="costOfMonthly"><p>Cost of Monthly Pass:</p><p class="costOfMonthly">${thirtyDayPass}</p></div>`)
+$(`.table${m}`).append(`<div class="monthlyTotalDiv" id="monthlyTotal"><p class="G">Montly Total:</p><p class="monthlyTotal G"></p></div>`)
+$(`.table${m}`).append(`<div class="costOfMonthlyDiv" id="costOfMonthly"><p class="G">Cost of Monthly Pass:</p><p class="costOfMonthly G">${thirtyDayPass}</p></div>`)
 
 $('.dayB').each(function(index){
   $(this).addClass(`${index}`)

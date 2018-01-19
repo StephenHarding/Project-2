@@ -1,7 +1,11 @@
   <% include ../partials/top.ejs %>
+<div class="subListc">
+ <div class ="subList">
 <% data.forEach(sub => { %>
-	<a href="/subway/<%= sub.name %>"><p><%= sub.name %></p></a>
+	<a class="subLink" href="/subway/<%= sub.name %>"><p class="subLink L"><%= sub.name %></p></a>
 <% }) %>
+</div>
+</div>
     <script src='/src/jquery.js'></script>
   <script src='/src/main.js'></script>
 

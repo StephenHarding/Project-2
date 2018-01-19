@@ -1,6 +1,6 @@
   <% include ../partials/top.ejs %>
 
-<div class='movie-container'>
+<div class='loginC'>
   <form method='POST' action='/auth/register'>
     <input name='username' type='text' placeholder='username' required />
     <input name='email' type='email' placeholder='email' required />
@@ -9,6 +9,9 @@
     <input name='lastname' type='text' placeholder='last name' required />
     <input type='submit' value='Register!' />
   </form>
+  <div class="WWW">
+  	<p>Make sure to login using your username and not your email</p>
+  </div>
 </div>
 
 </body>
