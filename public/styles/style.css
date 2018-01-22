@@ -79,6 +79,18 @@ header {
   color: blue;
   text-decoration: none
 }
+.a2 {
+    color: blue;
+  text-decoration: none;
+  background-color: #87c67b;;
+  padding: 12px;
+}
+.a1:hover {
+ color:#448afc;
+}
+.a2:hover {
+  color:#448afc;
+}
 .ultop {
   display: flex;
   justify-content: flex-end;
